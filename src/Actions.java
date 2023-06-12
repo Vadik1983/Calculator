@@ -1,6 +1,5 @@
 public class Actions extends UserInput{
     public char x;
-    public double result;
 
     public Actions(double numberA, double numberB, char x) {
         super(numberA, numberB);
@@ -8,22 +7,16 @@ public class Actions extends UserInput{
     }
 
     public double getResult() {
-        double res = switch (x) {
+        return switch (x) {
             case '+' -> getNumberA() + getNumberB();
             case '-' -> getNumberA() - getNumberB();
             case '*' -> getNumberA() * getNumberB();
             case '/' -> getNumberA() / getNumberB();
             default -> 0;
         };
-        return result;
-
-
-
     }
 
     public void setX(char x) {
         this.x = x;
-
     }
-
 }
